@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .nav-reset {
+    @apply visible relative left-0 top-0 z-auto flex w-auto flex-1 translate-x-0 translate-y-0 items-center justify-between divide-y-0 bg-transparent px-0;
+  }
+  .center-content {
+    @apply container mx-auto px-4 md:px-8 xl:max-w-7xl md:max-w-4xl;
+  }
+  .form-bg {
+    background-image: url("./assets/images/bg-shorten-mobile.svg");
+  }
+  @media (min-width: 720px) {
+    .form-bg {
+      background-image: url("./assets/images/bg-shorten-desktop.svg");
+    }
+  }
+  .boost-bg {
+    background-image: url("./assets/images/bg-boost-mobile.svg");
+  }
+  @media (min-width: 720px) {
+    .boost-bg {
+      background-image: url("./assets/images/bg-boost-desktop.svg");
+    }
+  }
+}
+
+@layer components {
+  .card {
+    @apply relative rounded-lg bg-white p-8 pt-20 text-center lg:text-left;
+  }
+  .cards-container > .card:not(:last-child) {
+    @apply before:absolute before:-bottom-20 before:left-1/2 before:h-20 before:w-2 before:-translate-x-1/2 before:bg-cyan lg:before:-right-20 lg:before:left-auto lg:before:top-1/2 lg:before:h-2 lg:before:w-20 lg:before:-translate-y-1/2 lg:before:translate-x-0;
+  }
+  .navlink {
+    @apply text-lg font-medium tracking-wider text-white duration-200 sm:text-grayish-violet sm:hover:text-very-dark-violet;
+  }
+  .main-paragraph {
+    @apply text-lg leading-7 text-grayish-violet;
+  }
+  .btn {
+    @apply relative overflow-hidden rounded-lg px-6 py-2 font-bold tracking-wider text-white before:absolute
+    before:left-1/2 before:top-1/2 before:h-0 before:w-0 before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-lg before:bg-white/40 before:duration-200 disabled:cursor-not-allowed [&:not(:disabled)]:hover:before:h-full [&:not(:disabled)]:hover:before:w-full;
+  }
+  .btn-primary {
+    @apply bg-cyan;
+  }
+  .btn-done {
+    @apply bg-dark-violet;
+  }
+  .btn-delete {
+    @apply bg-red;
+  }
+}
